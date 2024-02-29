@@ -15,22 +15,22 @@ function App() {
     {
       id: 1,
       title: "Learn React",
-      complete: true
+      completed: true
     },
     {
       id: 2,
       title: "walk the dog",
-      complete: false
+      completed: false
     },
     {
       id: 3,
       title: "make a coffee",
-      complete: true
+      completed: true
     },
     {
       id: 4,
       title: "wash the dishes",
-      complete: false
+      completed: false
     },
   ]);
 
@@ -46,6 +46,22 @@ function App() {
     const todoList = [...todos];
     todoList.push(newTodo);
     setTodos(todoList);
+  }
+
+  // update the list based in the id and the completed status is changed
+  const handledSetComplete = (id) => {
+    const updateList = todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo
+    })
+    setTodos(updateList);
+  }
+
+  const handleDelete = (id) => {
+    const updateList = todos.filter(todo => todo.id !== id);
+    setTodos(updateList);
   }
 
   return (
@@ -81,7 +97,10 @@ function App() {
               <>
                 <Title />
                 <TodoInput addTodo={addTodo} />
-                <TodoList todos={todos} />
+                <TodoList todos={todos}
+                  handledSetComplete={handledSetComplete}
+                  handleDelete={handleDelete}
+                />
               </>
             ) : (
               <h1>Loging first</h1>
