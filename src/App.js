@@ -7,10 +7,47 @@ import { TodoList } from './components/TodoList/todoList';
 import { LoginButton } from './login';
 import logo from './logo.svg';
 import { Profile } from './profile';
-import { Todo } from './components/Todo';
+import { useState } from 'react';
 
 function App() {
   const { isAuthenticated } = useAuth0();
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      title: "Learn React",
+      complete: true
+    },
+    {
+      id: 2,
+      title: "walk the dog",
+      complete: false
+    },
+    {
+      id: 3,
+      title: "make a coffee",
+      complete: true
+    },
+    {
+      id: 4,
+      title: "wash the dishes",
+      complete: false
+    },
+  ]);
+
+  // add element to the list based in the last id
+  const addTodo = (title) => {
+    const lastId = todos.length > 0 ? todos[todos.length - 1].id : 1;
+    const newTodo = {
+      id: lastId + 1,
+      title,
+      complete: false
+    }
+
+    const todoList = [...todos];
+    todoList.push(newTodo);
+    setTodos(todoList);
+  }
+
   return (
     <div className="App">
 
@@ -43,12 +80,8 @@ function App() {
             {isAuthenticated ? (
               <>
                 <Title />
-                <TodoInput />
-                <TodoList>
-                  <Todo />
-                  <Todo />
-                  <Todo />
-                </TodoList>
+                <TodoInput addTodo={addTodo} />
+                <TodoList todos={todos} />
               </>
             ) : (
               <h1>Loging first</h1>

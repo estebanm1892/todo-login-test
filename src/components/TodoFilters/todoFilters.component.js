@@ -20,7 +20,7 @@ export const FilterButtonContainer = ({ children }) => {
 
 export const FilterButton = ({ action, active, filter }) => {
     return <button className={`hover: text-white curson-pointer transition-all duration-300 ease-in-out `
-        + (active.toLowerCase().includes(filter.toLowerCase()) ? `text-blue-500` : `text-gray-400`)
+        + (active.toLowerCase().includes(filter.toLowerCase()) ? `text-blue-600` : `text-gray-400`)
     }>
         {filter}
     </button>
