@@ -1,6 +1,6 @@
 import React from "react";
-import { TodoFilters } from "../TodoFilters/todoFilters";
-import { Todo } from "../Todo/todo";
+import { TodoFilters } from "../TodoFilters/TodoFilters";
+import { Todo } from "../Todo/Todo";
 
 export const TodoList = ({
     todos,

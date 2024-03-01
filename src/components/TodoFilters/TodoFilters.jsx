@@ -1,5 +1,5 @@
 import React from "react";
-import { FilterButton, FilterButtonContainer, FiltersContainer, ItemsLeft } from "./todoFilters.component";
+import { FilterButton, FilterButtonContainer, FiltersContainer, ItemsLeft } from "./TodoFilters.component";
 
 export const TodoFilters = ({
     total,

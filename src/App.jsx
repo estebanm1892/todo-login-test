@@ -1,9 +1,9 @@
 import { useAuth0 } from '@auth0/auth0-react';
 
 import './App.css';
-import { Title } from './components/Title/title';
-import { TodoInput } from './components/TodoInput/todoInput';
-import { TodoList } from './components/TodoList/todoList';
+import { Title } from './components/Title/Title';
+import { TodoInput } from './components/TodoInput/TodoInput';
+import { TodoList } from './components/TodoList/TodoList';
 import { LoginButton } from './login';
 import logo from './logo.svg';
 import { Profile } from './profile';
