@@ -1,6 +1,6 @@
 import React from "react";
 
-export const FilteresContainer = ({ children }) => {
+export const FiltersContainer = ({ children }) => {
     return <div className="flex items-center justify-between p-4 bg-gray-700 border-b border solid border-gray-600">
         {children}
     </div>
@@ -19,9 +19,7 @@ export const FilterButtonContainer = ({ children }) => {
 }
 
 export const FilterButton = ({ action, active, filter }) => {
-    return <button className={`hover: text-white curson-pointer transition-all duration-300 ease-in-out `
-        + (active.toLowerCase().includes(filter.toLowerCase()) ? `text-blue-600` : `text-gray-400`)
-    }>
-        {filter}
-    </button>
+    return <button onClick={action}
+    className={` hover:text-white cursor-pointer transition-all duration-300 ease-in-out `
+        + (active.toLowerCase().includes(filter.toLowerCase()) ? 'text-blue-400' : 'text-gray-400')}>{filter}</button>
 }
