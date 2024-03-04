@@ -1,5 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Title } from './components/Title/Title';
 import { TodoInput } from './components/TodoInput/TodoInput';
@@ -7,10 +8,12 @@ import { TodoList } from './components/TodoList/TodoList';
 import { LoginButton } from './login';
 import logo from './logo.svg';
 import { Profile } from './profile';
-import { useEffect, useState } from 'react';
+
 
 function App() {
   const { isAuthenticated } = useAuth0();
+  const localUser = JSON.parse(localStorage.getItem('user'));
+
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -114,7 +117,7 @@ function App() {
           <h1 className="text-white">TODO APP</h1>
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <div href="#" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">
-              {isAuthenticated ? (
+              {isAuthenticated ||localUser ? (
                 <li>
                   <Profile />
                 </li>
@@ -133,7 +136,7 @@ function App() {
       <header className="App-header">
         <div className="min-h-screen w-full items-center justify-center py-20 px-5 flex ">
           <div className="container flex flex-col max-w-xl">
-            {isAuthenticated ? (
+            {isAuthenticated || localUser ? (
               <>
                 <Title />
                 <TodoInput addTodo={addTodo} />
