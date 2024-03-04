@@ -3,7 +3,7 @@ name: Deploy React App to Linux Server with Docker
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
