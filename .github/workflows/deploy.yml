@@ -40,4 +40,4 @@ jobs:
           docker pull estebanm1892/todo-app:latest
           docker stop todoapp || true
           docker rm todoapp || true
-          docker run -d --name todoapp -p 3500:80 estebanm1892/todo-app:latest
+          docker run -d --name todoapp -p 80:80 estebanm1892/todo-app:latest
