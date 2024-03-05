@@ -10,7 +10,7 @@ root.render(
     <Auth0Provider
       domain="esteban-monroy.us.auth0.com"
       clientId="pkp3d31ATKLTvsK6d5lodTfbG5qC7zNM"
-      audience="http://localhost:3000"
+      audience={window.location.hostname}
       redirectUri={window.location.origin}
     >
       <App />
