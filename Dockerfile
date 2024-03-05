@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expone la variable de entorno al entorno de construcción
-ENV APP_URL=${APP_URL}
+ENV REACT_APP_API_URL=${REACT_APP_API_URL}
 
 # Construye la aplicación
 RUN npm run build

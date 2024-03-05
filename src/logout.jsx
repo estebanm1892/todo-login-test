@@ -6,7 +6,7 @@ export const LogoutButton = () => {
 
     function prepareLogout() {
       localStorage.removeItem('user');
-      logout({ returnTo: process.env.APP_URL });
+      logout({ returnTo: process.env.REACT_APP_API_URL });
     }
 
     return <button onClick={() => prepareLogout()}>Log Out</button>;

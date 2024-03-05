@@ -25,7 +25,7 @@ jobs:
         push: true
         tags: estebanm1892/todo-app:latest
         build-args: |
-          APP_URL=${{ secrets.APP_URL }}
+          REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}
 
   deploy:
     needs: build-and-push
