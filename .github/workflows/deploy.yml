@@ -24,6 +24,8 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: estebanm1892/todo-app:latest
+        build-args: |
+          APP_URL=${{ secrets.APP_URL }}
 
   deploy:
     needs: build-and-push

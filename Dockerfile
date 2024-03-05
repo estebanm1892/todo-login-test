@@ -13,6 +13,9 @@ RUN npm install
 # Copia el resto del código fuente
 COPY . .
 
+# Expone la variable de entorno al entorno de construcción
+ENV APP_URL=${APP_URL}
+
 # Construye la aplicación
 RUN npm run build
 
