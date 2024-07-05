@@ -18,7 +18,7 @@ export const Profile = () => {
             token,
           };
           localStorage.setItem("user", JSON.stringify(userData));
-          setLocalUser(userData); // Actualiza el estado local con los datos del usuario
+          setLocalUser(userData); // Actualiza el estado local con los datos del usuario actual
           console.log("Usuario asignado a local");
         } catch (e) {
           console.error(e);
